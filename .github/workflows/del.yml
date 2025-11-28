@@ -1,9 +1,12 @@
-clean_runs:
-    name: 清理历史运行记录
+name: 每周删除提交记录
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 1'
+jobs:
+  build:
     runs-on: ubuntu-latest
-    needs: sync
     steps:
-      - name: 清理工作流运行记录
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
