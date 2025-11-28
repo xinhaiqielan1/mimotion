@@ -220,8 +220,8 @@ def not_in_push_time_range() -> bool:
 def push_to_push_plus(exec_results, summary):
     # 判断是否需要pushplus推送
     if PUSH_PLUS_TOKEN is not None and PUSH_PLUS_TOKEN != '' and PUSH_PLUS_TOKEN != 'NO':
-        if not_in_push_time_range():
-            return
+        # if not_in_push_time_range():
+           # return
         html = f'<div>{summary}</div>'
         if len(exec_results) >= PUSH_PLUS_MAX:
             html += '<div>账号数量过多，详细情况请前往github actions中查看</div>'
