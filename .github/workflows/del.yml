@@ -1,14 +1,1 @@
-name: 每周删除提交记录
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 2 * * 1'
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-        uses: Mattraks/delete-workflow-runs@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          retain_days: 0
-          keep_minimum_runs: 0
+
