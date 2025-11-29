@@ -1,7 +1,8 @@
 name: 批量删除工作流运行
-
-on: workflow_dispatch
-
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 1'
 jobs:
   delete-runs:
     runs-on: ubuntu-latest
