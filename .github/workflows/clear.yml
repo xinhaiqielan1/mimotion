@@ -1,0 +1,15 @@
+name: 批量删除工作流运行
+
+on: workflow_dispatch
+
+jobs:
+  delete-runs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 删除工作流运行
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 0  # 删除所有运行
+          keep_minimum_runs: 0
