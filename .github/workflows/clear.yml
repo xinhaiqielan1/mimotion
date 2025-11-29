@@ -12,5 +12,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
-          retain_days: 0  # 删除所有运行
-          keep_minimum_runs: 0
+          retain_days: 7  # 删除所有运行
+          keep_minimum_runs: 5
